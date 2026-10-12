@@ -1,0 +1,23 @@
+# Python
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.mypy_cache
+.ruff_cache
+
+# Node
+node_modules
+.next
+next-env.d.ts
+*.tsbuildinfo
+out
+
+# Local state
+.env
+.env.local
+storage
+data/esc50
+.run
+.DS_Store
+.claude

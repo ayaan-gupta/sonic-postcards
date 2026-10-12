@@ -1,0 +1,36 @@
+[project]
+name = "sonic-postcards-api"
+version = "0.1.0"
+description = "Audio pipeline, geo queries and postcard painter for Sonic Postcards."
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+  "real_audio: needs ESC-50 clips fetched with `make fetch-real`; skipped when they are absent",
+]
+filterwarnings = [
+  "ignore::DeprecationWarning",
+  # Starlette 1.7 announces a future move of its test client to another HTTP library.
+  "ignore:Using `httpx` with `starlette.testclient`",
+]
+
+[tool.ruff]
+line-length = 160
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501", "B008"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+exclude = ["tests/"]
+
+[[tool.mypy.overrides]]
+module = ["av.*", "ai_edge_litert.*", "pgvector.*"]
+ignore_missing_imports = true
