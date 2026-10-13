@@ -99,7 +99,9 @@ def seed_demo(service: PostcardService, *, real_dir: Path = REAL_DIR, now: datet
     now = now or datetime.now(UTC)
     real = real_clips(real_dir)
     with service.db.connection() as conn:
-        existing = {row["clip_key"] for row in conn.execute("SELECT clip_key FROM postcards WHERE seeded")}
+        existing = {row["clip_key"] for row in conn.execute("SELECT clip_key FROM postcards WHERE seeded AND device_hash = 'seed'")}
+    if existing:
+        return 0  # already seeded; a second run must not add a second set (real clips have other keys)
     analysed: dict[str, Tagging] = {}
     added = 0
     for index, (lat, lon, kind, hour, days_ago) in enumerate(DEMO):

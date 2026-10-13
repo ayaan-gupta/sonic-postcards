@@ -1,0 +1,115 @@
+{
+  "dataset": "ESC-50 subset, 8 clips x 12 classes, each looped to 10 s",
+  "per_class": {
+    "car_horn": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 7,
+      "mean_same_class_in_top5": 2.62,
+      "min_same_class_in_top5": 0,
+      "top1_same_class": 7,
+      "tagged_with_expected_motif": 6,
+      "max_speech_probability": 0.059
+    },
+    "chirping_birds": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 8,
+      "mean_same_class_in_top5": 4.5,
+      "min_same_class_in_top5": 3,
+      "top1_same_class": 8,
+      "tagged_with_expected_motif": 8,
+      "max_speech_probability": 0.049
+    },
+    "church_bells": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 8,
+      "mean_same_class_in_top5": 5.0,
+      "min_same_class_in_top5": 5,
+      "top1_same_class": 8,
+      "tagged_with_expected_motif": 8,
+      "max_speech_probability": 0.003
+    },
+    "crackling_fire": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 8,
+      "mean_same_class_in_top5": 4.88,
+      "min_same_class_in_top5": 4,
+      "top1_same_class": 8,
+      "tagged_with_expected_motif": 7,
+      "max_speech_probability": 0.02
+    },
+    "crickets": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 8,
+      "mean_same_class_in_top5": 2.38,
+      "min_same_class_in_top5": 1,
+      "top1_same_class": 6,
+      "tagged_with_expected_motif": 4,
+      "max_speech_probability": 0.017
+    },
+    "engine": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 7,
+      "mean_same_class_in_top5": 2.0,
+      "min_same_class_in_top5": 0,
+      "top1_same_class": 6,
+      "tagged_with_expected_motif": 8,
+      "max_speech_probability": 0.023
+    },
+    "pouring_water": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 6,
+      "mean_same_class_in_top5": 3.75,
+      "min_same_class_in_top5": 0,
+      "top1_same_class": 6,
+      "tagged_with_expected_motif": 8,
+      "max_speech_probability": 0.015
+    },
+    "rain": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 8,
+      "mean_same_class_in_top5": 4.5,
+      "min_same_class_in_top5": 1,
+      "top1_same_class": 7,
+      "tagged_with_expected_motif": 7,
+      "max_speech_probability": 0.011
+    },
+    "sea_waves": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 8,
+      "mean_same_class_in_top5": 3.25,
+      "min_same_class_in_top5": 2,
+      "top1_same_class": 7,
+      "tagged_with_expected_motif": 8,
+      "max_speech_probability": 0.003
+    },
+    "thunderstorm": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 8,
+      "mean_same_class_in_top5": 4.38,
+      "min_same_class_in_top5": 3,
+      "top1_same_class": 7,
+      "tagged_with_expected_motif": 6,
+      "max_speech_probability": 0.011
+    },
+    "train": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 8,
+      "mean_same_class_in_top5": 4.5,
+      "min_same_class_in_top5": 3,
+      "top1_same_class": 8,
+      "tagged_with_expected_motif": 7,
+      "max_speech_probability": 0.276
+    },
+    "wind": {
+      "clips": 8,
+      "queries_with_same_class_in_top5": 7,
+      "mean_same_class_in_top5": 1.62,
+      "min_same_class_in_top5": 0,
+      "top1_same_class": 5,
+      "tagged_with_expected_motif": 7,
+      "max_speech_probability": 0.02
+    }
+  },
+  "refused": [],
+  "mean_same_class_in_top5": 3.62
+}
