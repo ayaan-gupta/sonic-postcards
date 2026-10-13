@@ -68,7 +68,7 @@ async function main() {
     const image = page.locator('[data-testid=arrival] .postcard img')
     await image.evaluate((img: HTMLImageElement) => img.decode())
     check('the postcard image loaded', (await image.evaluate((img: HTMLImageElement) => img.naturalWidth)) === 1200)
-    await page.getByRole('link', { name: 'See it on the map' }).click()
+    await page.getByRole('link', { name: 'View on map' }).click()
     await page.locator('.sheet .sheet__place').filter({ hasText: 'Lisbon' }).waitFor({ timeout: 15_000 })
     check('the new pin opens on the map', true)
     await page.locator('.sheet .play').click()

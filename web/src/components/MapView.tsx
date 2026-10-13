@@ -113,6 +113,12 @@ export function MapView({ selectedId, focus, refreshKey, onSelect, onStats, onAt
 
       map.on('load', () => {
         if (!map) return
+        // Small counts are on nearly every screen, so have their bubbles ready before any tile asks.
+        for (let count = 2; count <= 120; count++) {
+          const id = clusterImageId(count)
+          const image = imageFor(id, ratio)
+          if (image && !map.hasImage(id)) map.addImage(id, image, { pixelRatio: image.pixelRatio })
+        }
         map.addSource('pins', {
           type: 'geojson',
           data: { type: 'FeatureCollection', features: [] },
@@ -130,8 +136,11 @@ export function MapView({ selectedId, focus, refreshKey, onSelect, onStats, onAt
           filter: ['any', ['has', 'point_count'], ['>', ['get', 'count'], 1]],
           layout: {
             'icon-image': ['case', ['has', 'point_count'], CLUSTER_IMAGE, ['concat', 'cluster:', ['to-string', ['get', 'count']]]],
-            'icon-allow-overlap': true,
-            'icon-ignore-placement': true,
+            // Cluster centres drift as points merge, so two can land almost on top of each other.
+            // Let the larger one win the spot; the smaller reappears one zoom step in.
+            'icon-allow-overlap': false,
+            'icon-padding': 0,
+            'symbol-sort-key': ['-', ['coalesce', ['get', 'sum'], ['get', 'count']]],
           },
         })
         map.addLayer({

@@ -5,14 +5,21 @@ from __future__ import annotations
 import json
 import statistics
 import time
+from pathlib import Path
 
 from fastapi.testclient import TestClient
 
 from app.geo.grid import is_on_grid
-from app.seed import DEMO, clear, seed_demo, seed_pins
+from app.seed import DEMO, clear, seed_pins
+from app.seed import seed_demo as _seed_demo
 from app.service import PostcardService
 
 BUDGET_SECONDS = 0.5  # a quarter of the 2 s the whole map load is allowed
+
+
+def seed_demo(service: PostcardService) -> int:
+    """Always the synthetic set, even on a machine where real clips have been fetched."""
+    return _seed_demo(service, real_dir=Path("/nonexistent"))
 
 
 def test_demo_seed_runs_the_real_pipeline_and_is_idempotent(service: PostcardService) -> None:

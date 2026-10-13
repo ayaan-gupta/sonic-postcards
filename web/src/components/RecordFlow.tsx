@@ -281,7 +281,7 @@ export function RecordFlow() {
           </div>
           <div className="row">
             <Link href={`/?p=${card.id}`} className="button">
-              See it on the map
+              View on map
             </Link>
             <button type="button" className="button button--quiet" onClick={() => void sharePostcard(card).then((result) => result && setToast(result))}>
               <ShareIcon />
